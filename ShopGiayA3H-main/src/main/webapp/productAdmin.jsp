@@ -45,7 +45,7 @@
                                     </thead>
                                     <tbody>
                                     <c:forEach items="${product}" var="pro">
-                                        <tr onclick="setname(${pro.product.id}, '${pro.name}', ${pro.price}, '${pro.title}',${pro.cateId.cid}, '${pro.description}', '${pro.image}', ${pro.saleId}, ${current_quantity})">
+                                        <tr onclick="setname(${pro.id}, '${pro.name}', ${pro.price}, '${pro.title}',${pro.cateId.cid}, '${pro.description}', '${pro.image}', ${pro.saleId})">
                                             <td>${pro.name}</td>
                                             <td>${pro.price}</td>
                                             <td style="width: 120px;">

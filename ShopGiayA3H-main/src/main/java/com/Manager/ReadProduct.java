@@ -30,24 +30,26 @@ public class ReadProduct extends HttpServlet {
         url = "/productAdmin.jsp";
         ProductDao productDao = new ProductDao();
 
-        List<CartItemBean> cartItemBeans = new ArrayList<>();
+        //List<CartItemBean> cartItemBeans = new ArrayList<>();
         List<ProductEntity> products = productDao.getListProduct();
 
-        CartItemBean cartItemBean = new CartItemBean();
+        System.out.println("So luong: "+ products.size());
 
-        StorageDAO storageDAO = new StorageDAO();
-        StorageEntity storageEntity;
-        for(ProductEntity product : products){
-             cartItemBean.setProductEntity(product);
-             int current_quantity = 0;
-            storageEntity = storageDAO.getStorageByProductId(product.getId().toString());
-            if (storageEntity != null){
-                current_quantity = storageEntity.getQuantity();
-            }
-             cartItemBean.setQuantity(current_quantity);
-            cartItemBeans.add(cartItemBean);
-        }
-        request.setAttribute("product", cartItemBeans);
+//        CartItemBean cartItemBean = new CartItemBean();
+//
+//        StorageDAO storageDAO = new StorageDAO();
+//        StorageEntity storageEntity;
+//        for(ProductEntity product : products){
+//             cartItemBean.setProductEntity(product);
+//             int current_quantity = 0;
+//            storageEntity = storageDAO.getStorageByProductId(product.getId().toString());
+//            if (storageEntity != null){
+//                current_quantity = storageEntity.getQuantity();
+//            }
+//             cartItemBean.setQuantity(current_quantity);
+//            cartItemBeans.add(cartItemBean);
+//        }
+        request.setAttribute("product", products);
 
         CategoryDao categoryDao = new CategoryDao();
         List<CategoryEntity> categories = categoryDao.getCategory();

@@ -45,16 +45,16 @@
                                     </thead>
                                     <tbody>
                                     <c:forEach items="${product}" var="pro">
-                                    <tr onclick="setname(${pro.id}, '${pro.name}', ${pro.price}, '${pro.title}',${pro.cateId.cid}, '${pro.description}', '${pro.image}', ${pro.saleId})">
-                                        <td>${pro.name}</td>
-                                        <td>${pro.price}</td>
-                                        <td style="width: 120px;">
-                                            <form action="delete">
-                                                <input type="hidden" name="id" value="${pro.id}">
-                                                <a class="btn btn-danger btn-round btn-fill" href="" onclick="showMess(${pro.id})" >Delete</a>
-                                            </form>
-                                        </td>
-                                    </tr>
+                                        <tr onclick="setname(${pro.id}, '${pro.name}', ${pro.price}, '${pro.title}',${pro.cateId.cid}, '${pro.description}', '${pro.image}', ${pro.saleId})">
+                                            <td>${pro.name}</td>
+                                            <td>${pro.price}</td>
+                                            <td style="width: 120px;">
+                                                <form action="delete">
+                                                    <input type="hidden" name="id" value="${pro.id}">
+                                                    <a class="btn btn-danger btn-round btn-fill" href="" onclick="showMess(${pro.id})" >Delete</a>
+                                                </form>
+                                            </td>
+                                        </tr>
                                     </c:forEach>
                                     </tbody>
                                 </table>
@@ -97,6 +97,11 @@
                                                 <label>Description</label>
                                                 <textarea name="description" id="description" class="form-control" cols="30" rows="5"
                                                           placeholder="Description"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <textarea name="description" id="current_quantity" class="form-control" cols="30" rows="5"
+                                                          placeholder="Current_quantity"></textarea>
                                             </div>
                                         </div>
                                     </div>
